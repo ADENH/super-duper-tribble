@@ -1,5 +1,8 @@
 package com.enhaa.protobuf;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.protobuf.models.Address;
 import com.protobuf.models.Car;
 import com.protobuf.models.Person;
@@ -26,10 +29,13 @@ public class CompositionDemo {
 				.setYear(2021)
 				.build();
 		
+		List<Car> cars = new ArrayList<Car>();
+		cars.add(fortuner);
+		cars.add(avanza);
+		
 		Person person = Person.newBuilder()
 				.setAddress(address)
-				.addCar(avanza)
-				.addCar(fortuner)
+				.addAllCar(cars)
 				.setAge(26)
 				.setName("Enhaa")
 				.build();
