@@ -14,15 +14,22 @@ public class CompositionDemo {
 				.setStreet("jl Hasym Asari")
 				.build();
 		
-		Car car = Car.newBuilder()
+		Car fortuner = Car.newBuilder()
 				.setMake("TOYOTA")
 				.setModel("FORTUNER")
 				.setYear(2021)
 				.build();
 		
+		Car avanza = Car.newBuilder()
+				.setMake("TOYOTA")
+				.setModel("Avanza")
+				.setYear(2021)
+				.build();
+		
 		Person person = Person.newBuilder()
 				.setAddress(address)
-				.setCar(car)
+				.addCar(avanza)
+				.addCar(fortuner)
 				.setAge(26)
 				.setName("Enhaa")
 				.build();
